@@ -5,25 +5,25 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Plant Diseases</title>
+    <title>植物病害检测</title>
   </head>
   <body>
     <div id='name' class='container'>
       <header>
-          <h1 id='head1'><strong>Plant Diseases</h1>
-            <h1 id='head1'><strong>Recognition</h1>
+          <h1 id='head1'><strong>植物病害</h1>
+            <h1 id='head1'><strong>识别检测</h1>
       </header>
         <p></p>
     <form method="post" id="fileform" enctype="multipart/form-data">
     {% csrf_token %}
     <div class="file-upload">
       <div class="file-select">
-          <div class="file-select-button" id="fileName">Choose File</div>
-        <div class="file-select-name" id="noFile">No file chosen...</div>
+          <div class="file-select-button" id="fileName">选择文件</div>
+        <div class="file-select-name" id="noFile">还没有文件被选择</div>
         <input id="chooseFile" type="file" name="myfile">
       </div>
     </div>
-    <button id="sub" class="btn btn-success btn-lg" type="submit">Predict</button>
+    <button id="sub" class="btn btn-success btn-lg" type="submit">检测</button>
   </form>
 
 
