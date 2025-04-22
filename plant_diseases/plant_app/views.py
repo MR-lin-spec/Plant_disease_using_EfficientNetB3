@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.contrib.auth import authenticate, login
+from django.shortcuts import render, redirect
 from keras.preprocessing import image
 import numpy as np
 from .deeplearning import graph, model, output_list
@@ -25,3 +26,21 @@ def index(request):
             'result': result, 'file_url': b64_img})
 
     return render(request, "plant_app/index.html")
+
+
+def login_view(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        return render(request, 'plant_app/index.html')
+        #user = authenticate(request, username=username, password=password)
+        #if user is not None:
+         #   login(request, user)
+         #   return redirect('index')  # 登录成功后重定向到主页
+        #else:
+            # 登录失败，返回登录页面并显示错误信息
+         #   return render(request, 'plant_app/login.html', {'错误信息': '登录失败'})
+    else:
+        return render(request, 'plant_app/login.html')
+
+

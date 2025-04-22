@@ -1,3 +1,2 @@
 from django.test import TestCase
-
-# Create your tests here.
+from PIL import Image# Create your tests here.
