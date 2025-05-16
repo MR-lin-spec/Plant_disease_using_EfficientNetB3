@@ -32,6 +32,7 @@ def login_view(request):
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
+
         return render(request, 'plant_app/index.html')
         #user = authenticate(request, username=username, password=password)
         #if user is not None:
