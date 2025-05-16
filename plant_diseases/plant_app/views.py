@@ -5,6 +5,8 @@ import numpy as np
 from .deeplearning import graph, model, output_list
 import base64
 
+from .models import User
+
 
 def index(request):
     if request.method == 'POST' and request.FILES.get('myfile'):
@@ -30,14 +32,30 @@ def index(request):
 
 def login_view(request):
     if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
+        username = request.POST.get("username",None)
+        password = request.POST.get("password",None)
+        #如果用户名和密码符合要求
         if username == "Lin" and password == "1234":
             return redirect('index')  # 登录成功，重定向到主页
+        #如果是注册按钮
         else:
             return redirect('error')  # 登录失败，重定向到错误页面
     else:
-        return render(request, 'plant_app/login.html')  # 渲染登录页面
+            return render(request, 'plant_app/login.html')  # 渲染登录页面
 
 def error_view(request):
     return render(request, 'plant_app/error.html')
+
+#注册界面
+def register_view(request):
+    if request.method=="POST":
+        #获取信息
+        username = request.POST['username']
+        password = request.POST['password']
+        #注册用户
+        User.objects.create(user=username,password=password)
+        #返回结果
+        return redirect("login")
+    elif request.method=="GET":
+        return render(request,'plant_app/register.html')
+
