@@ -78,4 +78,5 @@ wrapt                        1.14.1/<br>
 
 All in all,the tensorflow api give me bad experiences than pytorch,I advise you to use pytorch to imporve this project if necessary
 Any question if you have,Don't hestiate to email me,My email is 3304452595@qq.com <br> 
-**In Fujan agriculate and forest university**
+**In Fujan agriculate and forest university**<br>
+ [My Kaggle Project ](https://www.kaggle.com/code/mrlkzh/plant-disease-detection-using-efficientnetb3)
