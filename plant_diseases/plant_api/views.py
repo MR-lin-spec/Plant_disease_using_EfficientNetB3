@@ -1,8 +1,8 @@
-from keras.preprocessing import image
+from keras.api._tf_keras.keras.preprocessing import image
 import numpy as np
 from rest_framework import generics
 from .serializers import ImageSerializer
-from plant_app.deeplearning import graph, model, output_list
+from plant_app.deeplearning import model, output_list
 from rest_framework.response import Response
 
 
@@ -21,8 +21,7 @@ class Predict(generics.CreateAPIView):
             img = np.expand_dims(img, axis=0)
             img = img/255
 
-            with graph.as_default():
-                prediction = model.predict(img)
+            prediction = model.predict(img)
 
             prediction_flatten = prediction.flatten()
             max_val_index = np.argmax(prediction_flatten)

@@ -1,11 +1,22 @@
+/*body {*/
+    /*display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;*/
+    /*background-image: url("images/leaf.jpg");*/
+    /*background-size: cover;*/
+    /*background-position: center;*/
+/*}*/
+
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-image: url("images/leaf.jpg");
+    background-image: url("images/leaf.jpg"); /* 确保路径正确 */
     background-size: cover;
     background-position: center;
+    font-family: Arial, sans-serif;
 }
 
 header {
