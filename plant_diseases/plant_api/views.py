@@ -26,5 +26,5 @@ class Predict(generics.CreateAPIView):
             prediction_flatten = prediction.flatten()
             max_val_index = np.argmax(prediction_flatten)
             result = output_list[max_val_index]
-
             return Response({'result': result})
+        #这是一条测试的注释
